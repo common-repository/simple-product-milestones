@@ -1,0 +1,43 @@
+/** Import specific components */
+// @import "components/buttons";
+@import "components/tailwind";
+
+.pb-step:after {
+    border-color: var(--chosen-color) !important;
+    background-color: var(--chosen-bg-color) !important;
+    color: var(--chosen-color) !important;
+}
+
+.pb-step:before {
+    background-color: var(--chosen-color) !important;
+}
+
+.pb-uncompleted-step::before {
+    background-color: var(--chosen-uncompleted-color) !important;
+}
+.pb-uncompleted-step::after {
+    background-color: var(--chosen-uncompleted-color) !important;
+    color: var(--chosen-uncompleted-text-color) !important;
+}
+
+.pb-tooltip:before {
+    @apply pb-w-fit;
+}
+
+.pb-steps .pb-step:first-child:before {
+    content: none !important;
+}
+
+.pb-steps .pb-step[data-content]:after {
+    content: attr(data-content) !important;
+}
+
+@media (min-width: 1024px) {
+    .lg\:pb-tooltip-bottom:before {
+        @apply pb-w-max;
+    }
+}
+
+.product {
+    @apply pb-overflow-visible #{!important};
+}
